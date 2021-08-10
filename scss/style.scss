@@ -1,0 +1,216 @@
+@import './var.scss';
+
+/* css reset */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* -------------------------------------- */
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family:'微軟正黑體';
+  font-weight: lighter;
+}
+
+.wrapper {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.shadow {
+  box-shadow: 0px 0px 12px rgba($color: #000000, $alpha: .13);
+}
+
+#app {
+  display: inline-block;
+  box-sizing: border-box;
+  margin: 0px auto;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background-image: url(../image/bg-001.jpg);
+  background-size: cover;
+  background-position: center center;
+
+  @media screen and (min-width:575px) {
+    max-width: 575px;
+    max-height: 1024px;
+  }
+}
+
+header {
+  width: 90%;
+  height: 90px;
+  margin: 12px auto;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  .date {
+    position: relative;
+    width: 140px;
+    height: 80px;
+    margin-left: 10px;
+    .day, .month, .year {
+      display: inline-block;
+      position: absolute;
+      color: $gray;
+    }
+    .day {
+      width: 80px;
+      font-size: 52px;
+      line-height: 80px;
+      text-align: center;
+    }
+    .month {
+      left: 80px;
+      top: 20px;
+    }
+    .year {
+      left: 80px;
+      top: 42px;
+    }
+  }
+  .clock {
+    font-size: 52px;
+    color: $white;
+    margin-right: 10px;
+  }
+}
+
+.add-wrap {
+  width: 90%;
+  height: 50px;
+  margin: 10px auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  
+  .input {
+    display: inline-block;
+    border: none;
+    outline: none;
+    background-color: $white;
+    border-radius: 50px;
+    height: 50px;
+    width: calc(100% - 92px);
+    color: $gray;
+    font-size: 16px;
+    padding: 0 15px;
+
+    &::placeholder {
+      font-weight: 100;
+      font-family: '微軟正黑體';
+      color: $light-gray;
+    }
+  }
+
+  .add-btn {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: $white;
+    transition: .3s;
+      &::before {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        content: '';
+        width: .5px;
+        height: 25px;
+        background-color: $pink;
+      }
+      &::after {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        content: '';
+        width: 25px;
+        height: .5px;
+        background-color: $pink;
+      }
+      &:active {
+        transform: scale(.9);
+      }
+  }
+}
+
+.switch-warp {
+  position: relative;
+  width: 90%;
+  margin: 18px auto;
+  display: flex;
+
+  div {
+    display: inline-block;
+    width: 33%;
+    height: 28px;
+    text-align: center;
+    color: $gray;
+    font-weight: normal;
+    letter-spacing: 1.8px;
+    cursor: pointer;
+  }
+
+  .active-line {
+    display: inline-block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 33%;
+    height: 4px;
+    background: linear-gradient(to right, #ffb5b5 0%,#fbd3d3 45%,#ffa4a4 100%);
+    box-shadow: 0px 2px 5px rgba($color: #000000, $alpha: .1);
+  }
+}
