@@ -1,4 +1,64 @@
 @charset "UTF-8";
+/* To Do List */
+.list-enter-active,
+.list-leave-active {
+  -webkit-transition: all .8s ease;
+  transition: all .8s ease;
+}
+
+.list-enter-from {
+  opacity: 0;
+  -webkit-transform: translateX(30px);
+          transform: translateX(30px);
+}
+
+.list-leave-to {
+  opacity: 0;
+  -webkit-transform: translateX(-30px);
+          transform: translateX(-30px);
+}
+
+.list-move {
+  -webkit-transition: -webkit-transform .8s ease;
+  transition: -webkit-transform .8s ease;
+  transition: transform .8s ease;
+  transition: transform .8s ease, -webkit-transform .8s ease;
+}
+
+.list-leave-active {
+  position: absolute;
+}
+
+/* Pin Star Button */
+.star-enter-active,
+.star-leave-active {
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+  position: absolute;
+}
+
+.star-enter-from,
+.star-leave-to {
+  -webkit-transform: scale(0);
+          transform: scale(0);
+}
+
+/* Edit Input */
+.input-enter-active {
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+  position: absolute;
+}
+
+.input-enter-from {
+  opacity: 0;
+}
+
+/* vue編譯完成前，先不顯示資料 */
+[v-cloak] {
+  opacity: 0;
+}
+
 /* css reset */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -60,7 +120,6 @@ body {
 
 .wrapper {
   width: 100%;
-  height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -80,6 +139,7 @@ body {
           box-sizing: border-box;
   margin: 0px auto;
   width: 100%;
+  min-width: 320px;
   height: 100vh;
   overflow: hidden;
   background-image: url(../image/bg-001.jpg);
@@ -90,6 +150,7 @@ body {
 @media screen and (min-width: 575px) {
   #app {
     max-width: 575px;
+    min-height: 800px;
     max-height: 1024px;
   }
 }
@@ -175,6 +236,7 @@ header .clock {
   width: calc(100% - 92px);
   color: #b1b1b1;
   font-size: 16px;
+  font-weight: 300;
   padding: 0 15px;
 }
 
@@ -210,8 +272,8 @@ header .clock {
   border-radius: 50%;
   cursor: pointer;
   background-color: #ffffff;
-  -webkit-transition: .3s;
-  transition: .3s;
+  -webkit-transition: .25s;
+  transition: .25s;
 }
 
 .add-wrap .add-btn::before {
@@ -239,14 +301,14 @@ header .clock {
 }
 
 .add-wrap .add-btn:active {
-  -webkit-transform: scale(0.9);
-          transform: scale(0.9);
+  -webkit-transform: scale(0.8);
+          transform: scale(0.8);
 }
 
 .switch-warp {
   position: relative;
   width: 90%;
-  margin: 18px auto;
+  margin: 18px auto 10px auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -267,12 +329,207 @@ header .clock {
   display: inline-block;
   position: absolute;
   bottom: 0;
-  left: 0;
   width: 33%;
   height: 4px;
-  background: -webkit-gradient(linear, left top, right top, from(#ffb5b5), color-stop(45%, #fbd3d3), to(#ffa4a4));
-  background: linear-gradient(to right, #ffb5b5 0%, #fbd3d3 45%, #ffa4a4 100%);
+  background: -webkit-gradient(linear, left top, right top, from(#ffb5b5), color-stop(45%, #f8d4d4), to(#ffa4a4));
+  background: linear-gradient(to right, #ffb5b5 0%, #f8d4d4 45%, #ffa4a4 100%);
   -webkit-box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
           box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+.switch-warp .all {
+  left: 0%;
+}
+
+.switch-warp .todo {
+  left: 33.3%;
+}
+
+.switch-warp .done {
+  left: 66.6%;
+}
+
+.list {
+  position: relative;
+  height: calc(100vh - 250px);
+  margin: 0 auto;
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-top: 10px;
+}
+
+.list::-webkit-scrollbar {
+  width: 3px;
+  height: 3px;
+}
+
+.list::-webkit-scrollbar-thumb {
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.list::-webkit-scrollbar-track {
+  border-radius: 15px;
+}
+
+.list .item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 90%;
+  min-height: 50px;
+  border-radius: 25px;
+  margin-bottom: 10px;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  background: -webkit-gradient(linear, left top, left bottom, from(#ffffff00), color-stop(60%, #ffffffbd), to(#ffffff));
+  background: linear-gradient(to bottom, #ffffff00 0%, #ffffffbd 60%, #ffffff 100%);
+  color: #999999;
+  font-weight: 300;
+  -webkit-transition: all 0.8s ease;
+  transition: all 0.8s ease;
+}
+
+.list .tick-wrap {
+  display: inline-block;
+  margin: 10px;
+  position: relative;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  cursor: pointer;
+}
+
+.list .tick {
+  display: inline-block;
+  position: relative;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.list .tick-off {
+  background-color: #ffffff;
+  -webkit-transform: rotate(0) scale(0);
+          transform: rotate(0) scale(0);
+  -webkit-transition: .25s;
+  transition: .25s;
+  -webkit-transition-timing-function: cubic-bezier(0.17, 0.67, 0.86, 1.42);
+          transition-timing-function: cubic-bezier(0.17, 0.67, 0.86, 1.42);
+}
+
+.list .tick-on {
+  display: inline-block;
+  position: relative;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #ffb7b7;
+  -webkit-transform: rotate(45deg) scale(1);
+          transform: rotate(45deg) scale(1);
+}
+
+.list .tick-on::after {
+  content: "";
+  background-color: transparent;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 25%;
+  height: 50%;
+  border-bottom: 1.5px solid #ffffff;
+  border-right: 1.5px solid #ffffff;
+}
+
+.list .content {
+  display: inline-block;
+  width: 100%;
+  margin: 12px 0;
+  line-height: 1.5;
+}
+
+.list .pink-text {
+  font-weight: 400;
+}
+
+.list .btn-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 85px;
+  margin: 5px 10px 5px 5px;
+  position: relative;
+}
+
+.list .btn-wrap .icon-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.list .btn-wrap .icon-btn img {
+  width: 20px;
+  height: 20px;
+}
+
+.list .edit-input {
+  display: inline-block;
+  border: none;
+  outline: none;
+  background-color: #ffffff;
+  border-radius: 50px;
+  height: 50px;
+  width: 100%;
+  color: #b1b1b1;
+  font-size: 16px;
+  font-weight: 300;
+  padding: 0 15px;
+}
+
+.list .nothing {
+  color: #b1b1b1;
+  letter-spacing: 1.5px;
+  font-size: 16px;
+  margin: 20px;
 }
 /*# sourceMappingURL=style.css.map */

@@ -1,4 +1,10 @@
 @import './var.scss';
+@import './transition.scss';
+
+/* vue編譯完成前，先不顯示資料 */
+[v-cloak] {
+  opacity: 0;
+}
 
 /* css reset */
 html, body, div, span, applet, object, iframe,
@@ -56,7 +62,6 @@ body {
 
 .wrapper {
   width: 100%;
-  height: 100vh;
   display: flex;
   align-items: center;
 }
@@ -70,6 +75,7 @@ body {
   box-sizing: border-box;
   margin: 0px auto;
   width: 100%;
+  min-width: 320px;
   height: 100vh;
   overflow: hidden;
   background-image: url(../image/bg-001.jpg);
@@ -78,6 +84,7 @@ body {
 
   @media screen and (min-width:575px) {
     max-width: 575px;
+    min-height: 800px;
     max-height: 1024px;
   }
 }
@@ -142,12 +149,13 @@ header {
     width: calc(100% - 92px);
     color: $gray;
     font-size: 16px;
+    font-weight: 300;
     padding: 0 15px;
 
     &::placeholder {
       font-weight: 100;
       font-family: '微軟正黑體';
-      color: $light-gray;
+      color: $gray-light;
     }
   }
 
@@ -159,7 +167,7 @@ header {
     border-radius: 50%;
     cursor: pointer;
     background-color: $white;
-    transition: .3s;
+    transition: .25s;
       &::before {
         position: absolute;
         top: 50%;
@@ -181,7 +189,7 @@ header {
         background-color: $pink;
       }
       &:active {
-        transform: scale(.9);
+        transform: scale(.8);
       }
   }
 }
@@ -189,7 +197,7 @@ header {
 .switch-warp {
   position: relative;
   width: 90%;
-  margin: 18px auto;
+  margin: 18px auto 10px auto;
   display: flex;
 
   div {
@@ -207,10 +215,159 @@ header {
     display: inline-block;
     position: absolute;
     bottom: 0;
-    left: 0;
     width: 33%;
     height: 4px;
-    background: linear-gradient(to right, #ffb5b5 0%,#fbd3d3 45%,#ffa4a4 100%);
+    background: linear-gradient(to right, #ffb5b5 0%,#f8d4d4 45%,#ffa4a4 100%);
     box-shadow: 0px 2px 5px rgba($color: #000000, $alpha: .1);
+    transition: .3s;
+  }
+  .all {
+    left: 0%
+  }
+  .todo {
+    left: 33.3%
+  }
+  .done {
+    left: 66.6%
+  }
+}
+
+.list {
+  position: relative;
+  height: calc(100vh - 250px);
+  margin: 0 auto;
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 10px;
+
+  &::-webkit-scrollbar {
+    width: 3px;
+    height: 3px;
+  }
+  &::-webkit-scrollbar-thumb {
+    border-radius: 15px;
+    background: rgba($color: $white, $alpha: .5)
+  }
+  &::-webkit-scrollbar-track {
+    border-radius: 15px;
+  }
+
+  .item {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 90%;
+    min-height: 50px;
+    border-radius: 25px;
+    margin-bottom: 10px;
+    flex-shrink: 0;
+    background: linear-gradient(to bottom, #ffffff00 0%,#ffffffbd 60%, #ffffff 100%);
+    color: $gray-dark;
+    font-weight: 300;
+    transition: all 0.8s ease;
+  }
+
+  .tick-wrap {
+    display: inline-block;
+    margin: 10px;
+    position: relative;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: $white;
+    cursor: pointer;
+  }
+  .tick {
+    display: inline-block;
+    position: relative;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+  }
+  .tick-off {
+    background-color: $white;
+    transform: rotate(0) scale(0);
+    transition: .25s;
+    transition-timing-function: cubic-bezier(.17,.67,.86,1.42);
+  }
+  .tick-on {
+    display: inline-block;
+    position: relative;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: $pink;
+    transform: rotate(45deg) scale(1);
+    &::after {
+      content: "";
+      background-color: transparent;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%,-50%);
+      width: 25%;
+      height: 50%;
+      border-bottom: 1.5px solid $white;
+      border-right: 1.5px solid $white;
+    }
+  }
+
+  .content {
+    display: inline-block;
+    width: 100%;
+    margin: 12px 0;
+    line-height: 1.5;
+  }
+
+  .pink-text {
+    // color: #ffb5b5;
+    font-weight: 400;
+  }
+
+  .btn-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 85px;
+    margin: 5px 10px 5px 5px;
+    position: relative;
+
+    .icon-btn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 40px;
+      height: 40px;
+      cursor: pointer;
+      img {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+
+  .edit-input {
+    display: inline-block;
+    border: none;
+    outline: none;
+    background-color: $white;
+    border-radius: 50px;
+    height: 50px;
+    width: 100%;
+    color: $gray;
+    font-size: 16px;
+    font-weight: 300;
+    padding: 0 15px;
+  }
+
+  .nothing {
+    color: $gray;
+    letter-spacing: 1.5px;
+    font-size: 16px;
+    margin: 20px;
   }
 }

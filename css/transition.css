@@ -1,0 +1,55 @@
+/* To Do List */
+.list-enter-active,
+.list-leave-active {
+  -webkit-transition: all .8s ease;
+  transition: all .8s ease;
+}
+
+.list-enter-from {
+  opacity: 0;
+  -webkit-transform: translateX(30px);
+          transform: translateX(30px);
+}
+
+.list-leave-to {
+  opacity: 0;
+  -webkit-transform: translateX(-30px);
+          transform: translateX(-30px);
+}
+
+.list-move {
+  -webkit-transition: -webkit-transform .8s ease;
+  transition: -webkit-transform .8s ease;
+  transition: transform .8s ease;
+  transition: transform .8s ease, -webkit-transform .8s ease;
+}
+
+.list-leave-active {
+  position: absolute;
+}
+
+/* Pin Star Button */
+.star-enter-active,
+.star-leave-active {
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+  position: absolute;
+}
+
+.star-enter-from,
+.star-leave-to {
+  -webkit-transform: scale(0);
+          transform: scale(0);
+}
+
+/* Edit Input */
+.input-enter-active {
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+  position: absolute;
+}
+
+.input-enter-from {
+  opacity: 0;
+}
+/*# sourceMappingURL=transition.css.map */

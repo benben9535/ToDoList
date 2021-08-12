@@ -5,31 +5,74 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>To Do List</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
   <div class="wrapper">
     <div id="app">
-      <header class="shadow">
+      <header class="shadow" v-cloak>
         <div class="date">
           <div class="day">{{ time.day }}</div>
           <div class="month">{{ time.month }}</div>
           <div class="year">{{ time.year }}</div>
         </div>
-        <div class="clock">{{ time.hour + ':' + time.minute }}</div>
+      <div class="clock">{{ time.hour + ':' + time.minute }}</div>
+      
       </header>
       <div class="add-wrap">
-        <input type="text" maxlength="50" placeholder="Add Task" class="input shadow">
-        <div class="add-btn shadow"></div>
+        <input
+          type="text"
+          maxlength="50"
+          placeholder="Add Task"
+          class="input shadow"
+          v-model.trim="addTaskContent"
+        >
+        <div class="add-btn shadow" @click="addTask"></div>
       </div>
       <div class="switch-warp">
-        <div>ALL</div>
-        <div>TO DO</div>
-        <div>DONE</div>
-        <span class="active-line"></span>
+        <div @click="actived = 'all'">ALL</div>
+        <div @click="actived = 'todo'">TO DO</div>
+        <div @click="actived = 'done'">DONE</div>
+        <span class="active-line" :class="actived"></span>
       </div>
+      <section class="list" v-cloak>
+        <transition-group name="list">
+          <div v-if="!showList.length" class="nothing">Nothing</div>
+          <div
+            v-for="item in showList"
+            :key="item.id"
+            class="item shadow"
+          >
+            <div v-show="item.id !== editID" class="tick-wrap" @click="item.done = !item.done">
+              <div class="tick tick-off" :class="item.done ? 'tick-on' : ''"></div>
+            </div>
+            <div v-show="item.id !== editID" class="content" :class="item.pin ? 'pink-text' : ''">{{ item.content }}</div>
+            <input
+              v-show="item.id === editID"
+              type="text"
+              maxlength="50"
+              class="edit-input"
+              :id="item.id"
+              v-model.trim="editTaskContent"
+              @blur="finishEditing(item)"
+            >
+            <div v-show="item.id !== editID" class="btn-wrap">
+              <div class="icon-btn" @click="item.pin = !item.pin">
+                <transition name="star">
+                  <img v-show="!item.pin" src="./image/star-off.svg" alt="pin">
+                </transition>
+                <transition name="star">
+                  <img v-show="item.pin" src="./image/star-on.svg" alt="pin">
+                </transition>
+              </div>
+              <div class="icon-btn" @click="editTask(item.id, item.content)"><img src="./image/edit.svg" alt="edit"></div>
+              <div class="icon-btn" @click="deleteTask(item.id)"><img src="./image/delete.svg" alt="delete"></div>
+            </div>
+          </div>
+      </transition-group>
+      </section>
     </div>
   </div>
   <script src="https://unpkg.com/vue@next"></script>
