@@ -81,7 +81,7 @@ const vm = createApp({
         hour: now.getHours() < 10 ? '0' + now.getHours() : now.getHours(),
         minute: now.getMinutes() < 10 ? '0' + now.getMinutes() : now.getMinutes()
       }
-      setInterval(this.updateDate, 1000)
+      setTimeout(this.updateDate, 1000)
     },
     /**
      * 新增項目

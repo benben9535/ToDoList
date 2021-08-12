@@ -62,8 +62,10 @@ body {
 
 .wrapper {
   width: 100%;
+  min-height: 100vh;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .shadow {
@@ -84,8 +86,9 @@ body {
 
   @media screen and (min-width:575px) {
     max-width: 575px;
-    min-height: 800px;
-    max-height: 1024px;
+    min-height: 760px;
+    max-height: 900px;
+    margin: 20px auto;
   }
 }
 
