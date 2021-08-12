@@ -86,8 +86,8 @@ body {
 
   @media screen and (min-width:575px) {
     max-width: 575px;
-    min-height: 760px;
-    max-height: 900px;
+    min-height: 575px;
+    height: calc(100vh - 40px);
     margin: 20px auto;
   }
 }
