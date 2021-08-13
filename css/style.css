@@ -1,4 +1,184 @@
 @charset "UTF-8";
+/* Pink Theme */
+/* Dark Blue Theme */
+.theme-pink {
+  background-image: url(../image/bg-001.jpg);
+}
+
+.theme-pink .shadow {
+  -webkit-box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.13);
+          box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.13);
+}
+
+.theme-pink .date {
+  color: #999999;
+}
+
+.theme-pink .clock {
+  color: #ffffff;
+}
+
+.theme-pink .input {
+  color: #999999;
+  background-color: #ffffff;
+}
+
+.theme-pink .input::-webkit-input-placeholder {
+  color: #dadada;
+}
+
+.theme-pink .input:-ms-input-placeholder {
+  color: #dadada;
+}
+
+.theme-pink .input::-ms-input-placeholder {
+  color: #dadada;
+}
+
+.theme-pink .input::placeholder {
+  color: #dadada;
+}
+
+.theme-pink #addBtn {
+  background-color: #ffffff;
+}
+
+.theme-pink #addBtn::before, .theme-pink #addBtn::after {
+  background-color: #ffb7b7;
+}
+
+.theme-pink .switch-btn {
+  color: #b1b1b1;
+}
+
+.theme-pink .active-line {
+  background: -webkit-gradient(linear, left top, right top, from(#ffb5b5), color-stop(45%, #f8d4d4), to(#ffa4a4));
+  background: linear-gradient(to right, #ffb5b5 0%, #f8d4d4 45%, #ffa4a4 100%);
+  -webkit-box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.theme-pink .item {
+  background: -webkit-gradient(linear, left top, left bottom, from(#ffffff00), color-stop(60%, #ffffffbd), to(#ffffff));
+  background: linear-gradient(to bottom, #ffffff00 0%, #ffffffbd 60%, #ffffff 100%);
+  color: #999999;
+}
+
+.theme-pink .tick-wrap {
+  background-color: #ffffff;
+}
+
+.theme-pink .tick-wrap .tick-off {
+  background-color: #ffffff;
+}
+
+.theme-pink .tick-wrap .tick-on {
+  background-color: #ffb7b7;
+}
+
+.theme-pink .tick-wrap .tick-on::after {
+  border-bottom: 1.5px solid #ffffff;
+  border-right: 1.5px solid #ffffff;
+}
+
+.theme-pink .edit-input {
+  color: #999999;
+  background-color: #ffffff;
+}
+
+.theme-pink .nothing {
+  color: #b1b1b1;
+}
+
+.theme-dark-blue {
+  background-image: url(../image/bg-004.jpeg);
+}
+
+.theme-dark-blue .shadow {
+  -webkit-box-shadow: 0px 0px 12px rgba(255, 255, 255, 0.13);
+          box-shadow: 0px 0px 12px rgba(255, 255, 255, 0.13);
+}
+
+.theme-dark-blue .date {
+  color: #999999;
+}
+
+.theme-dark-blue .clock {
+  color: #ffffff;
+}
+
+.theme-dark-blue .input {
+  color: #999999;
+  background-color: #ffffff;
+}
+
+.theme-dark-blue .input::-webkit-input-placeholder {
+  color: #dadada;
+}
+
+.theme-dark-blue .input:-ms-input-placeholder {
+  color: #dadada;
+}
+
+.theme-dark-blue .input::-ms-input-placeholder {
+  color: #dadada;
+}
+
+.theme-dark-blue .input::placeholder {
+  color: #dadada;
+}
+
+.theme-dark-blue #addBtn {
+  background-color: #ffffff;
+}
+
+.theme-dark-blue #addBtn::before, .theme-dark-blue #addBtn::after {
+  background-color: #ffb7b7;
+}
+
+.theme-dark-blue .switch-btn {
+  color: #b1b1b1;
+}
+
+.theme-dark-blue .active-line {
+  background: -webkit-gradient(linear, left top, right top, from(#ffb5b5), color-stop(45%, #f8d4d4), to(#ffa4a4));
+  background: linear-gradient(to right, #ffb5b5 0%, #f8d4d4 45%, #ffa4a4 100%);
+  -webkit-box-shadow: 0px 2px 5px rgba(255, 255, 255, 0.3);
+          box-shadow: 0px 2px 5px rgba(255, 255, 255, 0.3);
+}
+
+.theme-dark-blue .item {
+  background: -webkit-gradient(linear, left top, left bottom, from(#ffffff00), color-stop(60%, #ffffffbd), to(#ffffff));
+  background: linear-gradient(to bottom, #ffffff00 0%, #ffffffbd 60%, #ffffff 100%);
+  color: #999999;
+}
+
+.theme-dark-blue .tick-wrap {
+  background-color: #ffffff;
+}
+
+.theme-dark-blue .tick-wrap .tick-off {
+  background-color: #ffffff;
+}
+
+.theme-dark-blue .tick-wrap .tick-on {
+  background-color: #ffb7b7;
+}
+
+.theme-dark-blue .tick-wrap .tick-on::after {
+  border-bottom: 1.5px solid #ffffff;
+  border-right: 1.5px solid #ffffff;
+}
+
+.theme-dark-blue .edit-input {
+  color: #999999;
+  background-color: #ffffff;
+}
+
+.theme-dark-blue .nothing {
+  color: #b1b1b1;
+}
+
 /* To Do List */
 .list-enter-active,
 .list-leave-active {
@@ -107,7 +287,7 @@ body {
   font-weight: lighter;
 }
 
-.wrapper {
+#app {
   width: 100%;
   min-height: 100vh;
   display: -webkit-box;
@@ -121,12 +301,7 @@ body {
           justify-content: center;
 }
 
-.shadow {
-  -webkit-box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.13);
-          box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.13);
-}
-
-#app {
+.app-wrap {
   display: inline-block;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -135,13 +310,12 @@ body {
   min-width: 320px;
   height: 100vh;
   overflow: hidden;
-  background-image: url(../image/bg-001.jpg);
   background-size: cover;
   background-position: center center;
 }
 
 @media screen and (min-width: 575px) {
-  #app {
+  .app-wrap {
     max-width: 575px;
     min-height: 575px;
     height: calc(100vh - 40px);
@@ -179,7 +353,6 @@ header .date {
 header .date .day, header .date .month, header .date .year {
   display: inline-block;
   position: absolute;
-  color: #b1b1b1;
 }
 
 header .date .day {
@@ -201,7 +374,6 @@ header .date .year {
 
 header .clock {
   font-size: 52px;
-  color: #ffffff;
   margin-right: 10px;
 }
 
@@ -224,11 +396,9 @@ header .clock {
   display: inline-block;
   border: none;
   outline: none;
-  background-color: #ffffff;
   border-radius: 50px;
   height: 50px;
   width: calc(100% - 92px);
-  color: #b1b1b1;
   font-size: 16px;
   font-weight: 300;
   padding: 0 15px;
@@ -237,25 +407,21 @@ header .clock {
 .add-wrap .input::-webkit-input-placeholder {
   font-weight: 100;
   font-family: '微軟正黑體';
-  color: #dadada;
 }
 
 .add-wrap .input:-ms-input-placeholder {
   font-weight: 100;
   font-family: '微軟正黑體';
-  color: #dadada;
 }
 
 .add-wrap .input::-ms-input-placeholder {
   font-weight: 100;
   font-family: '微軟正黑體';
-  color: #dadada;
 }
 
 .add-wrap .input::placeholder {
   font-weight: 100;
   font-family: '微軟正黑體';
-  color: #dadada;
 }
 
 .add-wrap #addBtn {
@@ -265,7 +431,6 @@ header .clock {
   height: 50px;
   border-radius: 50%;
   cursor: pointer;
-  background-color: #ffffff;
   -webkit-transition: .25s;
   transition: .25s;
 }
@@ -279,7 +444,6 @@ header .clock {
   content: '';
   width: .5px;
   height: 25px;
-  background-color: #ffb7b7;
 }
 
 .add-wrap #addBtn::after {
@@ -291,7 +455,6 @@ header .clock {
   content: '';
   width: 25px;
   height: .5px;
-  background-color: #ffb7b7;
 }
 
 .add-wrap .add-btn-active {
@@ -308,12 +471,11 @@ header .clock {
   display: flex;
 }
 
-.switch-warp div {
+.switch-warp .switch-btn {
   display: inline-block;
   width: 33%;
   height: 28px;
   text-align: center;
-  color: #b1b1b1;
   font-weight: normal;
   letter-spacing: 1.8px;
   cursor: pointer;
@@ -325,10 +487,6 @@ header .clock {
   bottom: 0;
   width: 33%;
   height: 4px;
-  background: -webkit-gradient(linear, left top, right top, from(#ffb5b5), color-stop(45%, #f8d4d4), to(#ffa4a4));
-  background: linear-gradient(to right, #ffb5b5 0%, #f8d4d4 45%, #ffa4a4 100%);
-  -webkit-box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-          box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
   -webkit-transition: .3s;
   transition: .3s;
 }
@@ -398,9 +556,6 @@ header .clock {
   margin-bottom: 10px;
   -ms-flex-negative: 0;
       flex-shrink: 0;
-  background: -webkit-gradient(linear, left top, left bottom, from(#ffffff00), color-stop(60%, #ffffffbd), to(#ffffff));
-  background: linear-gradient(to bottom, #ffffff00 0%, #ffffffbd 60%, #ffffff 100%);
-  color: #999999;
   font-weight: 300;
   -webkit-transition: all 0.8s ease;
   transition: all 0.8s ease;
@@ -413,7 +568,6 @@ header .clock {
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  background-color: #ffffff;
   cursor: pointer;
 }
 
@@ -426,7 +580,6 @@ header .clock {
 }
 
 .list .tick-off {
-  background-color: #ffffff;
   -webkit-transform: rotate(0) scale(0);
           transform: rotate(0) scale(0);
   -webkit-transition: .25s;
@@ -441,7 +594,6 @@ header .clock {
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  background-color: #ffb7b7;
   -webkit-transform: rotate(45deg) scale(1);
           transform: rotate(45deg) scale(1);
 }
@@ -456,8 +608,6 @@ header .clock {
           transform: translate(-50%, -50%);
   width: 25%;
   height: 50%;
-  border-bottom: 1.5px solid #ffffff;
-  border-right: 1.5px solid #ffffff;
 }
 
 .list .content {
@@ -465,9 +615,11 @@ header .clock {
   width: 100%;
   margin: 12px 0;
   line-height: 1.5;
+  -webkit-transition: .25s;
+  transition: .25s;
 }
 
-.list .pink-text {
+.list .pin-text {
   font-weight: 400;
 }
 
@@ -510,18 +662,15 @@ header .clock {
   display: inline-block;
   border: none;
   outline: none;
-  background-color: #ffffff;
   border-radius: 50px;
   height: 50px;
   width: 100%;
-  color: #b1b1b1;
   font-size: 16px;
   font-weight: 300;
   padding: 0 15px;
 }
 
 .list .nothing {
-  color: #b1b1b1;
   letter-spacing: 1.5px;
   font-size: 16px;
   margin: 20px;

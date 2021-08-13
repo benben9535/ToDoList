@@ -8,6 +8,7 @@ const vm = createApp({
       editTaskContent: '',
       editID: 0,
       actived: 'all',
+      theme: 'pink',
       list:[],
     }
   },
