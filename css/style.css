@@ -43,17 +43,6 @@
           transform: scale(0);
 }
 
-/* Edit Input */
-.input-enter-active {
-  -webkit-transition: all .3s ease;
-  transition: all .3s ease;
-  position: absolute;
-}
-
-.input-enter-from {
-  opacity: 0;
-}
-
 /* vue編譯完成前，先不顯示資料 */
 [v-cloak] {
   opacity: 0;
@@ -269,7 +258,7 @@ header .clock {
   color: #dadada;
 }
 
-.add-wrap .add-btn {
+.add-wrap #addBtn {
   position: relative;
   display: inline-block;
   width: 50px;
@@ -281,7 +270,7 @@ header .clock {
   transition: .25s;
 }
 
-.add-wrap .add-btn::before {
+.add-wrap #addBtn::before {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -293,7 +282,7 @@ header .clock {
   background-color: #ffb7b7;
 }
 
-.add-wrap .add-btn::after {
+.add-wrap #addBtn::after {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -305,7 +294,7 @@ header .clock {
   background-color: #ffb7b7;
 }
 
-.add-wrap .add-btn:active {
+.add-wrap .add-btn-active {
   -webkit-transform: scale(0.8);
           transform: scale(0.8);
 }

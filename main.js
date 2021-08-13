@@ -60,12 +60,17 @@ const vm = createApp({
       return list
     }
   },
+  watch: {
+    list: {
+      handler: function(val) {
+        localStorage.setItem('toDoList', JSON.stringify(val))
+      },
+      deep: true
+    }
+  },
   created() {
     this.updateDate()
     this.list = JSON.parse(localStorage.getItem('toDoList')) || []
-    window.addEventListener('beforeunload', () => {
-      localStorage.setItem('toDoList', JSON.stringify(this.list))
-    });
   },
   methods: {
     /**
@@ -84,9 +89,13 @@ const vm = createApp({
       setTimeout(this.updateDate, 1000)
     },
     /**
-     * 新增項目
+     * 新增項目，點擊按鈕時的動畫
      */
     addTask() {
+      document.getElementById('addBtn').classList.add('add-btn-active')
+      setTimeout(() => {
+        document.getElementById('addBtn').classList.remove('add-btn-active')
+      }, 100)
       if (!this.addTaskContent) return
       this.list.push({
         id: +new Date(),
@@ -129,6 +138,22 @@ const vm = createApp({
     deleteTask(id) {
       const index = this.list.findIndex(item => { return item.id === id })
       this.list.splice(index, 1)
+    },
+    /**
+     * 置頂/取消置頂項目
+     * 
+     * @param {Object} item 項目
+     */
+    pinTask(item) {
+      item.pin = !item.pin
+    },
+    /**
+     * 勾選/取消勾選項目
+     * 
+     * @param {Object} item 項目
+     */
+     checkTask(item) {
+      item.done = !item.done
     }
   }
 });

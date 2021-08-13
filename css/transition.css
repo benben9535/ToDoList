@@ -41,15 +41,4 @@
   -webkit-transform: scale(0);
           transform: scale(0);
 }
-
-/* Edit Input */
-.input-enter-active {
-  -webkit-transition: all .3s ease;
-  transition: all .3s ease;
-  position: absolute;
-}
-
-.input-enter-from {
-  opacity: 0;
-}
 /*# sourceMappingURL=transition.css.map */

@@ -28,12 +28,3 @@
 .star-leave-to{
   transform: scale(0);
 }
-
-/* Edit Input */
-.input-enter-active{
-  transition: all .3s ease;
-  position: absolute;
-}
-.input-enter-from{
-  opacity: 0;
-}

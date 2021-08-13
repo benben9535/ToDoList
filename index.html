@@ -29,7 +29,7 @@
           class="input shadow"
           v-model.trim="addTaskContent"
         >
-        <div class="add-btn shadow" @click="addTask"></div>
+        <div id="addBtn" class="shadow" @click="addTask"></div>
       </div>
       <div class="switch-warp">
         <div @click="actived = 'all'">ALL</div>
@@ -45,7 +45,7 @@
             :key="item.id"
             class="item shadow"
           >
-            <div v-show="item.id !== editID" class="tick-wrap" @click="item.done = !item.done">
+            <div v-show="item.id !== editID" class="tick-wrap" @click="checkTask(item)">
               <div class="tick tick-off" :class="item.done ? 'tick-on' : ''"></div>
             </div>
             <div v-show="item.id !== editID" class="content" :class="item.pin ? 'pink-text' : ''">{{ item.content }}</div>
@@ -59,7 +59,7 @@
               @blur="finishEditing(item)"
             >
             <div v-show="item.id !== editID" class="btn-wrap">
-              <div class="icon-btn" @click="item.pin = !item.pin">
+              <div class="icon-btn" @click="pinTask(item)">
                 <transition name="star">
                   <img v-show="!item.pin" src="./image/star-off.svg" alt="pin">
                 </transition>

@@ -162,7 +162,7 @@ header {
     }
   }
 
-  .add-btn {
+  #addBtn {
     position: relative;
     display: inline-block;
     width: 50px;
@@ -191,9 +191,9 @@ header {
         height: .5px;
         background-color: $pink;
       }
-      &:active {
-        transform: scale(.8);
-      }
+  }
+  .add-btn-active {
+    transform: scale(.8);
   }
 }
 
