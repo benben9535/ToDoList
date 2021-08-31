@@ -1,0 +1,38 @@
+{
+  "name": "Do!",
+  "short_name": "Do",
+  "description": "Do! 簡單便利的待辦清單，可以變換不同風格的畫面主題呦~",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#B2D6DE",
+  "theme_color": "#B2D6DE",
+  "lang": "zh-Hant",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "./image/android57x57.png",
+      "sizes": "57x57",
+      "type": "image/png"
+    },
+    {
+      "src": "./image/android60x60.png",
+      "sizes": "60x60",
+      "type": "image/png"
+    },
+    {
+      "src": "./image/android72x72.png",
+      "sizes": "72x72",
+      "type": "image/png"
+    },
+    {
+      "src": "./image/android76x76.png",
+      "sizes": "76x76",
+      "type": "image/png"
+    },
+    {
+      "src": "./image/android144x144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    }
+  ]
+}
