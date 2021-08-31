@@ -53,6 +53,29 @@ table {
 
 /* -------------------------------------- */
 
+// pwa安全高度設置
+@supports (padding-top: constant(safe-area-inset-top)) { // 11.0 – 11.2
+  html {
+    height: calc(100% + constant(safe-area-inset-top)) !important;
+    padding-top: constant(safe-area-inset-top) !important;
+  }
+  .app-wrap {
+    top: constant(safe-area-inset-top) !important;
+    height: calc(100% - constant(safe-area-inset-top)) !important;
+  }
+}
+
+@supports (padding-top: env(safe-area-inset-top)) { // 11.2+
+  html {
+    height: calc(100% + env(safe-area-inset-top)) !important;
+    padding-top: env(safe-area-inset-top) !important;
+  }
+
+  .app-wrap {
+    height: calc(100% - env(safe-area-inset-top)) !important;
+  }
+}
+
 body {
   padding: 0;
   margin: 0;
@@ -62,7 +85,7 @@ body {
 
 #app {
   width: 100%;
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -83,8 +106,6 @@ body {
   @media screen and (min-width:575px) {
     max-width: 575px;
     min-height: 575px;
-    height: calc(100vh - 40px);
-    margin: 20px auto;
   }
 }
 
