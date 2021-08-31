@@ -2,7 +2,7 @@
   "name": "Do!",
   "short_name": "Do",
   "description": "Do! 簡單便利的待辦清單，可以變換不同風格的畫面主題呦~",
-  "start_url": "/",
+  "start_url": "/ToDoList/",
   "display": "standalone",
   "background_color": "#B2D6DE",
   "theme_color": "#B2D6DE",
