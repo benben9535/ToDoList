@@ -3,16 +3,19 @@ const { createApp, ref } = Vue;
 const vm = createApp({
   data() {
     return {
-      time: {},
-      addTaskContent: '',
-      editTaskContent: '',
-      editID: 0,
-      actived: 'all',
-      theme: 'pink',
-      list:[],
+      time: {}, // 時鐘物件
+      addTaskContent: '', // 新增任務內容
+      editTaskContent: '', // 修改任務內容
+      editID: 0, // 要修改的項目編號
+      actived: 'all', // 目前顯示的分類
+      list:[], // 原始清單資料
+      theme: 'white', // 目前使用的主題
+      themeList: ['pink', 'white', 'wood', 'ocean', 'dark'], // 主題清單
+      showSetting: false // 是否展開主題清單
     }
   },
   computed: {
+    // 經過分類及排序後，要顯示的資料
     showList() {
       let list = []
       if (this.actived === 'all') {
@@ -59,19 +62,35 @@ const vm = createApp({
         })
       }
       return list
+    },
+    // 根據不同主題，變換icon顏色
+    iconColor() {
+      const grayIcon = ['pink', 'white', 'wood']
+      const whiteIcon = ['ocean', 'dark']
+      let color = ''
+      if (grayIcon.includes(this.theme))color = 'gray'
+      else if (whiteIcon.includes(this.theme)) color = 'white'
+      return color
     }
   },
   watch: {
+    // 資料或主題變動時，儲存到localStorage
     list: {
       handler: function(val) {
         localStorage.setItem('toDoList', JSON.stringify(val))
       },
       deep: true
+    },
+    theme(val) {
+      localStorage.setItem('toDoListTheme', val)
     }
   },
   created() {
+    // 設置時鐘
     this.updateDate()
+    // 從localStorage取得歷史資料
     this.list = JSON.parse(localStorage.getItem('toDoList')) || []
+    this.theme = localStorage.getItem('toDoListTheme') || 'white'
   },
   methods: {
     /**

@@ -28,3 +28,11 @@
 .star-leave-to{
   transform: scale(0);
 }
+
+.setting-enter-active {
+  transition: all .8s ease;
+}
+
+.setting-enter-from {
+  opacity: 0;
+}

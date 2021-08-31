@@ -1,0 +1,202 @@
+/* Pink Theme */
+$theme-pink: (
+  shadow: 0px 0px 12px rgba($color: #000000, $alpha: .13),
+  bg: url(../image/bg-001.jpg),
+  header: transparent,
+  date: #999999,
+  clock: #ffffff,
+  inputText: #999999,
+  inputBg: #ffffff,
+  placeholder: #dadada,
+  addBtn: #ffffff,
+  addIcon: #ffb7b7,
+  switchBtn: #b1b1b1,
+  activeLine: linear-gradient(to right, #ffb5b5 0%,#f8d4d4 45%,#ffa4a4 100%),
+  activeShadow: 0px 2px 5px rgba($color: #000000, $alpha: .1),
+  itemBg: linear-gradient(to bottom, #ffffff00 0%,#ffffffbd 60%, #ffffff 100%),
+  itemText: #999999,
+  tickOff: #ffffff,
+  tickOn: #ffb7b7,
+  tick: #ffffff,
+  nothing: #b1b1b1,
+  themePanel: rgba($color: #ffffff, $alpha: .8)
+);
+
+/* White Theme */
+$theme-white: (
+  shadow: 0px 0px 12px rgba($color: #000000, $alpha: .13),
+  bg: url(../image/bg-002.jpg),
+  header: transparent,
+  date: #9da8ad,
+  clock: #9da8ad,
+  inputText: #999999,
+  inputBg: #ffffff,
+  placeholder: #dadada,
+  addBtn: #ffffff,
+  addIcon: #9da8ad,
+  switchBtn: #9da8ad,
+  activeLine: linear-gradient(to right, #e8dbd8 0%, #e2cdc1 45%, #f3d9d1 100%),
+  activeShadow: 0px 2px 5px rgba($color: #000000, $alpha: .1),
+  itemBg: linear-gradient(to bottom, #ffffff00 0%,#ffffff9f 60%, #ffffff 100%),
+  itemText: #999999,
+  tickOff: #ffffff,
+  tickOn: #cfdadb,
+  tick: #ffffff,
+  nothing: #b1b1b1,
+  themePanel: rgba($color: #ffffff, $alpha: .3)
+);
+
+/* Wood Theme */
+$theme-wood: (
+  shadow: 0px 0px 12px rgba($color: #000000, $alpha: .25),
+  bg: url(../image/bg-003.jpg),
+  header: transparent,
+  date: #ffffff,
+  clock: #ffffff,
+  inputText: #999999,
+  inputBg: #ffffff,
+  placeholder: #dadada,
+  addBtn: #ffffff,
+  addIcon: #4d6e7a,
+  switchBtn: #ffffff,
+  activeLine: linear-gradient(to right, #4d6e7a 0%, #6a939d 45%, #4d6e7a 100%),
+  activeShadow: 0px 2px 5px rgba($color: #000000, $alpha: .1),
+  itemBg: linear-gradient(to bottom, #ffffff75 0%, #ffffff 60%, #ffffff99 100%),
+  itemText: #999999,
+  tickOff: #ffffff,
+  tickOn: #4d6e7a,
+  tick: #ffffff,
+  nothing: #ffffff,
+  themePanel: rgba($color: #ffffff, $alpha: .75)
+);
+
+/* Ocean Theme */
+$theme-ocean: (
+  shadow: 0px 0px 15px rgba($color: #ffffff, $alpha: .5),
+  bg: url(../image/bg-004.jpg),
+  header: #00000030,
+  date: #ffffff,
+  clock: #ffffff,
+  inputText: #ffffffde,
+  inputBg: #1e4d62,
+  placeholder: #ffffff98,
+  addBtn: #1e4d62,
+  addIcon: #ffffff,
+  switchBtn: #ffffff,
+  activeLine: linear-gradient(to right, #082740 0%, #24758a 45%, #0f3c4a 100%),
+  activeShadow: 0px 0px 5px rgba($color: #ffffff, $alpha: .85),
+  itemBg: linear-gradient(to bottom, #0000003b 0%, #0000001f 60%, #00000059 100%),
+  itemText: #ffffff,
+  tickOff: #ffffff,
+  tickOn: #3ab0b5,
+  tick: #ffffff,
+  nothing: #ffffff,
+  themePanel: rgba($color: #000000, $alpha: .25)
+);
+
+/* dark Theme */
+$theme-dark: (
+  shadow: 0px 0px 10px rgba($color: #ffffff, $alpha: .3),
+  bg: url(../image/bg-005.jpg),
+  header: #0000001a,
+  date: #ffffff,
+  clock: #ffffff,
+  inputText: #ffffffde,
+  inputBg: #101c2d,
+  placeholder: #ffffff98,
+  addBtn: #101c2d,
+  addIcon: #ffffff,
+  switchBtn: #ffffff,
+  activeLine: linear-gradient(to right, #082740 0%, #5f7aa5 45%, #111c2e 100%),
+  activeShadow: 0px 0px 8px rgba($color: #ffffff, $alpha: .70),
+  itemBg: linear-gradient(to bottom, #0000003b 0%, #0000001f 60%, #00000059 100%),
+  itemText: #ffffff,
+  tickOff: #ffffff,
+  tickOn: #101c2d,
+  tick: #ffffff,
+  nothing: #ffffff,
+  themePanel: rgba($color: #000000, $alpha: .25)
+);
+
+@mixin theme($theme) {
+  background-image: map-get($map: $theme, $key: bg);
+  .shadow {
+    box-shadow: map-get($map: $theme, $key: shadow);
+  }
+  header {
+    background-color: map-get($map: $theme, $key: header);
+  }
+  .date {
+    color: map-get($map: $theme, $key: date);
+  }
+  .clock {
+    color: map-get($map: $theme, $key: clock);
+  }
+  .input {
+    color: map-get($map: $theme, $key: inputText);
+    background-color: map-get($map: $theme, $key: inputBg);
+    &::placeholder {
+      color: map-get($map: $theme, $key: placeholder);
+    }
+  }
+  #addBtn {
+    background-color: map-get($map: $theme, $key: addBtn);
+    &::before, &::after {
+      background-color: map-get($map: $theme, $key: addIcon);
+    }
+  }
+  .switch-btn {
+    color: map-get($map: $theme, $key: switchBtn);
+  }
+  .active-line {
+    background: map-get($map: $theme, $key: activeLine);
+    box-shadow: map-get($map: $theme, $key: activeShadow);
+  }
+  .item {
+    background: map-get($map: $theme, $key: itemBg);
+    color: map-get($map: $theme, $key: itemText);
+  }
+  .tick-wrap {
+    background-color: map-get($map: $theme, $key: tickOff);
+    .tick-off {
+      background-color: map-get($map: $theme, $key: tickOff);
+    }
+    .tick-on {
+      background-color: map-get($map: $theme, $key: tickOn);
+      &::after {
+        border-bottom: 1.5px solid map-get($map: $theme, $key: tick);
+        border-right: 1.5px solid map-get($map: $theme, $key: tick);
+      }
+    }
+  }
+  .edit-input {
+    color: map-get($map: $theme, $key: inputText);
+    background-color: map-get($map: $theme, $key: inputBg);
+  }
+  .nothing {
+    color: map-get($map: $theme, $key: nothing);
+  }
+  .theme-panel {
+    background-color: map-get($map: $theme, $key: themePanel);
+  }
+}
+
+.theme-pink {
+  @include theme($theme-pink);
+}
+
+.theme-white {
+  @include theme($theme-white);
+}
+
+.theme-wood {
+  @include theme($theme-wood);
+}
+
+.theme-ocean {
+  @include theme($theme-ocean);
+}
+
+.theme-dark {
+  @include theme($theme-dark);
+}

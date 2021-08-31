@@ -1,11 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hant">
 
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>To Do List</title>
+  <meta name="description" content="Do! 簡單便利的待辦清單，可以變換不同風格的畫面主題呦~"> 
+  <meta name="keywords" content="待辦,行程,清單,生活,日常,便利">
+  <title>Do!</title>
+  <link rel="shortcut icon" href="image/Do.png">
   <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -45,7 +48,7 @@
               :key="item.id"
               class="item shadow"
             >
-              <div v-show="item.id !== editID" class="tick-wrap" @click="checkTask(item)">
+              <div v-show="item.id !== editID" class="tick-wrap" :style="{backgroundColor: item.done ? 'transparent' : '#ffffff'}" @click="checkTask(item)">
                 <div class="tick tick-off" :class="item.done ? 'tick-on' : ''"></div>
               </div>
               <div v-show="item.id !== editID" class="content" :class="item.pin ? 'pin-text' : ''">{{ item.content }}</div>
@@ -61,18 +64,38 @@
               <div v-show="item.id !== editID" class="btn-wrap">
                 <div class="icon-btn" @click="pinTask(item)">
                   <transition name="star">
-                    <img v-show="!item.pin" src="./image/star-off.svg" alt="pin">
+                    <img v-show="!item.pin" :src="`./image/star-off-${iconColor}.svg`" alt="pin">
                   </transition>
                   <transition name="star">
-                    <img v-show="item.pin" src="./image/star-on.svg" alt="pin">
+                    <img v-show="item.pin" :src="`./image/star-on-${iconColor}.svg`" alt="pin">
                   </transition>
                 </div>
-                <div class="icon-btn" @click="editTask(item.id, item.content)"><img src="./image/edit.svg" alt="edit"></div>
-                <div class="icon-btn" @click="deleteTask(item.id)"><img src="./image/delete.svg" alt="delete"></div>
+                <div class="icon-btn" @click="editTask(item.id, item.content)"><img :src="`./image/edit-${iconColor}.svg`" alt="edit"></div>
+                <div class="icon-btn" @click="deleteTask(item.id)"><img :src="`./image/delete-${iconColor}.svg`" alt="delete"></div>
               </div>
             </div>
         </transition-group>
         </section>
+        <div class="theme-wrap">
+          <div class="theme-panel shadow" :class="{'theme-open':showSetting}">
+            <transition name="setting">
+              <div v-show="showSetting" class="theme-btn-wrap">
+                <div
+                  v-for="item in themeList"
+                  class="theme-btn"
+                  :key="item"
+                  @click="theme = item"
+                >
+                  <span :class="item"></span>
+                </div>
+              </div>
+            </transition>
+            
+            <div class="theme-btn theme-icon" @click="showSetting = !showSetting">
+              <img src="./image/setting.svg" alt="theme">
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   <script src="https://unpkg.com/vue@next"></script>

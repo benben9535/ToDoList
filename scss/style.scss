@@ -1,4 +1,4 @@
-@import './var.scss';
+@import './theme.scss';
 @import './transition.scss';
 
 /* vue編譯完成前，先不顯示資料 */
@@ -20,35 +20,35 @@ article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup, 
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    font: inherit;
-    -webkit-tap-highlight-color: rgba(0,0,0,0);
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
-    display: block;
+  display: block;
 }
 body {
-    line-height: 1;
+  line-height: 1;
 }
 ol, ul {
-    list-style: none;
+  list-style: none;
 }
 blockquote, q {
-    quotes: none;
+  quotes: none;
 }
 blockquote:before, blockquote:after,
 q:before, q:after {
-    content: '';
-    content: none;
+  content: '';
+  content: none;
 }
 table {
-    border-collapse: collapse;
-    border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 /* -------------------------------------- */
@@ -222,7 +222,7 @@ header {
 
 .list {
   position: relative;
-  height: calc(100vh - 250px);
+  height: calc(100vh - 290px);
   margin: 0 auto;
   overflow-y: auto;
   overflow-x: hidden;
@@ -230,6 +230,10 @@ header {
   flex-direction: column;
   align-items: center;
   padding-top: 10px;
+
+  @media screen and (min-width: 575px) {
+    height: calc(100vh - 330px);
+  }
 
   &::-webkit-scrollbar {
     width: 3px;
@@ -347,5 +351,80 @@ header {
     letter-spacing: 1.5px;
     font-size: 16px;
     margin: 20px;
+  }
+}
+
+.theme-wrap {
+  display: flex;
+  justify-content: flex-end;
+  width: 90%;
+  margin: 12px auto;
+
+  .theme-panel {
+    display: inline-block;
+    height: 35px;
+    width: 35px;
+    overflow: hidden;
+    border-radius: 50px;
+    transition: all .3s;
+    text-align: right;
+    position: relative;
+  }
+  .theme-open {
+    width: 230px;
+    transition: all .3s;
+  }
+  .theme-btn {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    position: relative;
+    cursor: pointer;
+    img,span{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+    }
+    img {
+      width: 28px;
+      height: 28px;
+    }
+    span {
+      display: inline-block;
+      box-sizing: border-box;
+      width: 20px;
+      height: 20px;
+      border: 0.2px solid rgba($color: #ffffff, $alpha: 0.6);
+      border-radius: 50%;
+      vertical-align: baseline;
+    }
+    span.pink {
+      background-color: #F5B7AC;
+    }
+    span.white {
+      background-color: #FAF5F0;
+    }
+    span.wood {
+      background-color: #B2D6DE;
+    }
+    span.ocean {
+      background-color: #3096A2;
+    }
+    span.dark {
+      background-color: rgb(35, 59, 82);
+    }
+  }
+  .theme-btn-wrap {
+    display: inline-block;
+    position: absolute;
+    right: 40px;
+    top: 0;
+  }
+
+  .theme-icon {
+    position: absolute;
+    right: 0;
+    top: 0;
   }
 }

@@ -1,0 +1,490 @@
+/* Pink Theme */
+/* White Theme */
+/* Wood Theme */
+/* Ocean Theme */
+/* dark Theme */
+.theme-pink {
+  background-image: url(../image/bg-001.jpg);
+}
+
+.theme-pink .shadow {
+  -webkit-box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.13);
+          box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.13);
+}
+
+.theme-pink header {
+  background-color: transparent;
+}
+
+.theme-pink .date {
+  color: #999999;
+}
+
+.theme-pink .clock {
+  color: #ffffff;
+}
+
+.theme-pink .input {
+  color: #999999;
+  background-color: #ffffff;
+}
+
+.theme-pink .input::-webkit-input-placeholder {
+  color: #dadada;
+}
+
+.theme-pink .input:-ms-input-placeholder {
+  color: #dadada;
+}
+
+.theme-pink .input::-ms-input-placeholder {
+  color: #dadada;
+}
+
+.theme-pink .input::placeholder {
+  color: #dadada;
+}
+
+.theme-pink #addBtn {
+  background-color: #ffffff;
+}
+
+.theme-pink #addBtn::before, .theme-pink #addBtn::after {
+  background-color: #ffb7b7;
+}
+
+.theme-pink .switch-btn {
+  color: #b1b1b1;
+}
+
+.theme-pink .active-line {
+  background: -webkit-gradient(linear, left top, right top, from(#ffb5b5), color-stop(45%, #f8d4d4), to(#ffa4a4));
+  background: linear-gradient(to right, #ffb5b5 0%, #f8d4d4 45%, #ffa4a4 100%);
+  -webkit-box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.theme-pink .item {
+  background: -webkit-gradient(linear, left top, left bottom, from(#ffffff00), color-stop(60%, #ffffffbd), to(#ffffff));
+  background: linear-gradient(to bottom, #ffffff00 0%, #ffffffbd 60%, #ffffff 100%);
+  color: #999999;
+}
+
+.theme-pink .tick-wrap {
+  background-color: #ffffff;
+}
+
+.theme-pink .tick-wrap .tick-off {
+  background-color: #ffffff;
+}
+
+.theme-pink .tick-wrap .tick-on {
+  background-color: #ffb7b7;
+}
+
+.theme-pink .tick-wrap .tick-on::after {
+  border-bottom: 1.5px solid #ffffff;
+  border-right: 1.5px solid #ffffff;
+}
+
+.theme-pink .edit-input {
+  color: #999999;
+  background-color: #ffffff;
+}
+
+.theme-pink .nothing {
+  color: #b1b1b1;
+}
+
+.theme-pink .theme-panel {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.theme-white {
+  background-image: url(../image/bg-002.jpg);
+}
+
+.theme-white .shadow {
+  -webkit-box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.13);
+          box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.13);
+}
+
+.theme-white header {
+  background-color: transparent;
+}
+
+.theme-white .date {
+  color: #9da8ad;
+}
+
+.theme-white .clock {
+  color: #9da8ad;
+}
+
+.theme-white .input {
+  color: #999999;
+  background-color: #ffffff;
+}
+
+.theme-white .input::-webkit-input-placeholder {
+  color: #dadada;
+}
+
+.theme-white .input:-ms-input-placeholder {
+  color: #dadada;
+}
+
+.theme-white .input::-ms-input-placeholder {
+  color: #dadada;
+}
+
+.theme-white .input::placeholder {
+  color: #dadada;
+}
+
+.theme-white #addBtn {
+  background-color: #ffffff;
+}
+
+.theme-white #addBtn::before, .theme-white #addBtn::after {
+  background-color: #9da8ad;
+}
+
+.theme-white .switch-btn {
+  color: #9da8ad;
+}
+
+.theme-white .active-line {
+  background: -webkit-gradient(linear, left top, right top, from(#e8dbd8), color-stop(45%, #e2cdc1), to(#f3d9d1));
+  background: linear-gradient(to right, #e8dbd8 0%, #e2cdc1 45%, #f3d9d1 100%);
+  -webkit-box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.theme-white .item {
+  background: -webkit-gradient(linear, left top, left bottom, from(#ffffff00), color-stop(60%, #ffffff9f), to(#ffffff));
+  background: linear-gradient(to bottom, #ffffff00 0%, #ffffff9f 60%, #ffffff 100%);
+  color: #999999;
+}
+
+.theme-white .tick-wrap {
+  background-color: #ffffff;
+}
+
+.theme-white .tick-wrap .tick-off {
+  background-color: #ffffff;
+}
+
+.theme-white .tick-wrap .tick-on {
+  background-color: #cfdadb;
+}
+
+.theme-white .tick-wrap .tick-on::after {
+  border-bottom: 1.5px solid #ffffff;
+  border-right: 1.5px solid #ffffff;
+}
+
+.theme-white .edit-input {
+  color: #999999;
+  background-color: #ffffff;
+}
+
+.theme-white .nothing {
+  color: #b1b1b1;
+}
+
+.theme-white .theme-panel {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.theme-wood {
+  background-image: url(../image/bg-003.jpg);
+}
+
+.theme-wood .shadow {
+  -webkit-box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.25);
+}
+
+.theme-wood header {
+  background-color: transparent;
+}
+
+.theme-wood .date {
+  color: #ffffff;
+}
+
+.theme-wood .clock {
+  color: #ffffff;
+}
+
+.theme-wood .input {
+  color: #999999;
+  background-color: #ffffff;
+}
+
+.theme-wood .input::-webkit-input-placeholder {
+  color: #dadada;
+}
+
+.theme-wood .input:-ms-input-placeholder {
+  color: #dadada;
+}
+
+.theme-wood .input::-ms-input-placeholder {
+  color: #dadada;
+}
+
+.theme-wood .input::placeholder {
+  color: #dadada;
+}
+
+.theme-wood #addBtn {
+  background-color: #ffffff;
+}
+
+.theme-wood #addBtn::before, .theme-wood #addBtn::after {
+  background-color: #4d6e7a;
+}
+
+.theme-wood .switch-btn {
+  color: #ffffff;
+}
+
+.theme-wood .active-line {
+  background: -webkit-gradient(linear, left top, right top, from(#4d6e7a), color-stop(45%, #6a939d), to(#4d6e7a));
+  background: linear-gradient(to right, #4d6e7a 0%, #6a939d 45%, #4d6e7a 100%);
+  -webkit-box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.theme-wood .item {
+  background: -webkit-gradient(linear, left top, left bottom, from(#ffffff75), color-stop(60%, #ffffff), to(#ffffff99));
+  background: linear-gradient(to bottom, #ffffff75 0%, #ffffff 60%, #ffffff99 100%);
+  color: #999999;
+}
+
+.theme-wood .tick-wrap {
+  background-color: #ffffff;
+}
+
+.theme-wood .tick-wrap .tick-off {
+  background-color: #ffffff;
+}
+
+.theme-wood .tick-wrap .tick-on {
+  background-color: #4d6e7a;
+}
+
+.theme-wood .tick-wrap .tick-on::after {
+  border-bottom: 1.5px solid #ffffff;
+  border-right: 1.5px solid #ffffff;
+}
+
+.theme-wood .edit-input {
+  color: #999999;
+  background-color: #ffffff;
+}
+
+.theme-wood .nothing {
+  color: #ffffff;
+}
+
+.theme-wood .theme-panel {
+  background-color: rgba(255, 255, 255, 0.75);
+}
+
+.theme-ocean {
+  background-image: url(../image/bg-004.jpg);
+}
+
+.theme-ocean .shadow {
+  -webkit-box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.5);
+          box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.5);
+}
+
+.theme-ocean header {
+  background-color: #00000030;
+}
+
+.theme-ocean .date {
+  color: #ffffff;
+}
+
+.theme-ocean .clock {
+  color: #ffffff;
+}
+
+.theme-ocean .input {
+  color: #ffffffde;
+  background-color: #1e4d62;
+}
+
+.theme-ocean .input::-webkit-input-placeholder {
+  color: #ffffff98;
+}
+
+.theme-ocean .input:-ms-input-placeholder {
+  color: #ffffff98;
+}
+
+.theme-ocean .input::-ms-input-placeholder {
+  color: #ffffff98;
+}
+
+.theme-ocean .input::placeholder {
+  color: #ffffff98;
+}
+
+.theme-ocean #addBtn {
+  background-color: #1e4d62;
+}
+
+.theme-ocean #addBtn::before, .theme-ocean #addBtn::after {
+  background-color: #ffffff;
+}
+
+.theme-ocean .switch-btn {
+  color: #ffffff;
+}
+
+.theme-ocean .active-line {
+  background: -webkit-gradient(linear, left top, right top, from(#082740), color-stop(45%, #24758a), to(#0f3c4a));
+  background: linear-gradient(to right, #082740 0%, #24758a 45%, #0f3c4a 100%);
+  -webkit-box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.85);
+          box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.85);
+}
+
+.theme-ocean .item {
+  background: -webkit-gradient(linear, left top, left bottom, from(#0000003b), color-stop(60%, #0000001f), to(#00000059));
+  background: linear-gradient(to bottom, #0000003b 0%, #0000001f 60%, #00000059 100%);
+  color: #ffffff;
+}
+
+.theme-ocean .tick-wrap {
+  background-color: #ffffff;
+}
+
+.theme-ocean .tick-wrap .tick-off {
+  background-color: #ffffff;
+}
+
+.theme-ocean .tick-wrap .tick-on {
+  background-color: #3ab0b5;
+}
+
+.theme-ocean .tick-wrap .tick-on::after {
+  border-bottom: 1.5px solid #ffffff;
+  border-right: 1.5px solid #ffffff;
+}
+
+.theme-ocean .edit-input {
+  color: #ffffffde;
+  background-color: #1e4d62;
+}
+
+.theme-ocean .nothing {
+  color: #ffffff;
+}
+
+.theme-ocean .theme-panel {
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+.theme-dark {
+  background-image: url(../image/bg-005.jpg);
+}
+
+.theme-dark .shadow {
+  -webkit-box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.3);
+          box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.3);
+}
+
+.theme-dark header {
+  background-color: #0000001a;
+}
+
+.theme-dark .date {
+  color: #ffffff;
+}
+
+.theme-dark .clock {
+  color: #ffffff;
+}
+
+.theme-dark .input {
+  color: #ffffffde;
+  background-color: #101c2d;
+}
+
+.theme-dark .input::-webkit-input-placeholder {
+  color: #ffffff98;
+}
+
+.theme-dark .input:-ms-input-placeholder {
+  color: #ffffff98;
+}
+
+.theme-dark .input::-ms-input-placeholder {
+  color: #ffffff98;
+}
+
+.theme-dark .input::placeholder {
+  color: #ffffff98;
+}
+
+.theme-dark #addBtn {
+  background-color: #101c2d;
+}
+
+.theme-dark #addBtn::before, .theme-dark #addBtn::after {
+  background-color: #ffffff;
+}
+
+.theme-dark .switch-btn {
+  color: #ffffff;
+}
+
+.theme-dark .active-line {
+  background: -webkit-gradient(linear, left top, right top, from(#082740), color-stop(45%, #5f7aa5), to(#111c2e));
+  background: linear-gradient(to right, #082740 0%, #5f7aa5 45%, #111c2e 100%);
+  -webkit-box-shadow: 0px 0px 8px rgba(255, 255, 255, 0.7);
+          box-shadow: 0px 0px 8px rgba(255, 255, 255, 0.7);
+}
+
+.theme-dark .item {
+  background: -webkit-gradient(linear, left top, left bottom, from(#0000003b), color-stop(60%, #0000001f), to(#00000059));
+  background: linear-gradient(to bottom, #0000003b 0%, #0000001f 60%, #00000059 100%);
+  color: #ffffff;
+}
+
+.theme-dark .tick-wrap {
+  background-color: #ffffff;
+}
+
+.theme-dark .tick-wrap .tick-off {
+  background-color: #ffffff;
+}
+
+.theme-dark .tick-wrap .tick-on {
+  background-color: #101c2d;
+}
+
+.theme-dark .tick-wrap .tick-on::after {
+  border-bottom: 1.5px solid #ffffff;
+  border-right: 1.5px solid #ffffff;
+}
+
+.theme-dark .edit-input {
+  color: #ffffffde;
+  background-color: #101c2d;
+}
+
+.theme-dark .nothing {
+  color: #ffffff;
+}
+
+.theme-dark .theme-panel {
+  background-color: rgba(0, 0, 0, 0.25);
+}
+/*# sourceMappingURL=theme.css.map */
