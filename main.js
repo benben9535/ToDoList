@@ -94,11 +94,14 @@ const vm = createApp({
   },
   mounted() {
     // 解決手機版本100vh判定異常 - 用js取得瀏覽器高度後 填入CSS變數內
-    const refreshViewHeight = () => {
+    const resetViewHeight = () => {
       const vh = this.getSafeAreaHeight() * 0.01
       document.documentElement.style.setProperty('--vh', `${vh}px`)
     }
-    refreshViewHeight()
+    resetViewHeight()
+
+    // 當螢幕尺寸產生變化時 重新取得視窗高度
+    window.addEventListener('resize', resetViewHeight)
   },
   methods: {
     /**

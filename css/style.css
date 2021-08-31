@@ -643,6 +643,9 @@ body {
   .app-wrap {
     max-width: 575px;
     min-height: 575px;
+    height: calc(100vh - 40px);
+    height: calc(var(--vh, 1vh) * 100 - 40px);
+    margin: 20px;
   }
 }
 
@@ -829,6 +832,7 @@ header .clock {
 .list {
   position: relative;
   height: calc(100vh - 290px);
+  height: calc(var(--vh, 1vh) * 100 - 290px);
   margin: 0 auto;
   overflow-y: auto;
   overflow-x: hidden;
@@ -848,6 +852,7 @@ header .clock {
 @media screen and (min-width: 575px) {
   .list {
     height: calc(100vh - 330px);
+    height: calc(var(--vh, 1vh) * 100 - 330px);
   }
 }
 

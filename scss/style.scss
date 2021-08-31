@@ -52,36 +52,11 @@ table {
 }
 
 /* -------------------------------------- */
+
 // 解決手機版本100vh判定異常 - 宣告CSS變數
 :root {
   --vh: 0;
 }
-// // pwa安全高度設置
-// @supports (padding-top: constant(safe-area-inset-top)) { // 11.0 – 11.2
-//   html {
-//     height: calc(100% + constant(safe-area-inset-top)) !important;
-//     padding-top: constant(safe-area-inset-top) !important;
-//   }
-//   #app {
-//     height: calc(100% - constant(safe-area-inset-top)) !important;
-//   }
-//   .app-wrap {
-//     height: calc(100% - constant(safe-area-inset-top)) !important;
-//   }
-// }
-
-// @supports (padding-top: env(safe-area-inset-top)) { // 11.2+
-//   html {
-//     height: calc(100% + env(safe-area-inset-top)) !important;
-//     padding-top: env(safe-area-inset-top) !important;
-//   }
-//   #app {
-//     height: calc(100% - env(safe-area-inset-top)) !important;
-//   }
-//   .app-wrap {
-//     height: calc(100% - env(safe-area-inset-top)) !important;
-//   }
-// }
 
 body {
   padding: 0;
@@ -115,6 +90,9 @@ body {
   @media screen and (min-width:575px) {
     max-width: 575px;
     min-height: 575px;
+    height: calc(100vh - 40px);
+    height: calc(var(--vh, 1vh) * 100 - 40px);
+    margin: 20px;
   }
 }
 
@@ -253,6 +231,7 @@ header {
 .list {
   position: relative;
   height: calc(100vh - 290px);
+  height: calc(var(--vh, 1vh) * 100 - 290px);
   margin: 0 auto;
   overflow-y: auto;
   overflow-x: hidden;
@@ -263,6 +242,7 @@ header {
 
   @media screen and (min-width: 575px) {
     height: calc(100vh - 330px);
+    height: calc(var(--vh, 1vh) * 100 - 330px);
   }
 
   &::-webkit-scrollbar {
