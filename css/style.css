@@ -599,30 +599,8 @@ table {
 }
 
 /* -------------------------------------- */
-@supports (padding-top: constant(safe-area-inset-top)) {
-  html {
-    height: calc(100% + constant(safe-area-inset-top)) !important;
-    padding-top: constant(safe-area-inset-top) !important;
-  }
-  #app {
-    height: calc(100% - constant(safe-area-inset-top)) !important;
-  }
-  .app-wrap {
-    height: calc(100% - constant(safe-area-inset-top)) !important;
-  }
-}
-
-@supports (padding-top: env(safe-area-inset-top)) {
-  html {
-    height: calc(100% + env(safe-area-inset-top)) !important;
-    padding-top: env(safe-area-inset-top) !important;
-  }
-  #app {
-    height: calc(100% - env(safe-area-inset-top)) !important;
-  }
-  .app-wrap {
-    height: calc(100% - env(safe-area-inset-top)) !important;
-  }
+:root {
+  --vh: 0;
 }
 
 body {
@@ -635,6 +613,7 @@ body {
 #app {
   width: 100%;
   height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -654,6 +633,7 @@ body {
   width: 100%;
   min-width: 320px;
   height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
   overflow: hidden;
   background-size: cover;
   background-position: center center;

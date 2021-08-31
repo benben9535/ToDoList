@@ -92,7 +92,37 @@ const vm = createApp({
     this.list = JSON.parse(localStorage.getItem('toDoList')) || []
     this.theme = localStorage.getItem('toDoListTheme') || 'white'
   },
+  mounted() {
+    // 解決手機版本100vh判定異常 - 用js取得瀏覽器高度後 填入CSS變數內
+    const refreshViewHeight = () => {
+      const vh = this.getSafeAreaHeight() * 0.01
+      document.documentElement.style.setProperty('--vh', `${vh}px`)
+    }
+    refreshViewHeight()
+  },
   methods: {
+    /**
+     * 取得安全區域高度，因為在iOS系統pwa模式下，全螢幕需扣除頂部邊界高度（需設置viewport-fit=cover）
+     *
+     * @return {Number} 安全區域高度
+     */
+    getSafeAreaHeight() {
+      let vh = window.innerHeight
+      const div = document.createElement('div')
+      if (CSS.supports('top: env(safe-area-inset-top)')) {
+        div.style.top = 'env(safe-area-inset-top)'
+      } else if (CSS.supports('top: constant(safe-area-inset-top)')) {
+        div.style.top = 'constant(safe-area-inset-top)'
+      }
+      if (div.style.top) {
+        document.body.appendChild(div)
+        const insetTop = parseInt(getComputedStyle(div).top)
+        document.body.removeChild(div)
+        vh -= insetTop
+      }
+    
+      return vh
+    },
     /**
      * 更新日期/時間
      */
