@@ -448,8 +448,8 @@
 .theme-dark .active-line {
   background: -webkit-gradient(linear, left top, right top, from(#082740), color-stop(45%, #5f7aa5), to(#111c2e));
   background: linear-gradient(to right, #082740 0%, #5f7aa5 45%, #111c2e 100%);
-  -webkit-box-shadow: 0px 0px 8px rgba(255, 255, 255, 0.7);
-          box-shadow: 0px 0px 8px rgba(255, 255, 255, 0.7);
+  -webkit-box-shadow: 0px 0px 8px rgba(255, 255, 255, 0.3);
+          box-shadow: 0px 0px 8px rgba(255, 255, 255, 0.3);
 }
 
 .theme-dark .item {

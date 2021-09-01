@@ -27,8 +27,7 @@
             <div class="month">{{ time.month }}</div>
             <div class="year">{{ time.year }}</div>
           </div>
-        <div class="clock">{{ time.hour + ':' + time.minute }}</div>
-        
+          <div class="clock">{{ time.hour + ':' + time.minute }}</div>
         </header>
         <div class="add-wrap">
           <input
@@ -80,7 +79,7 @@
                 <div class="icon-btn" @click="deleteTask(item.id)"><img :src="`./image/delete-${iconColor}.svg`" alt="delete"></div>
               </div>
             </div>
-        </transition-group>
+          </transition-group>
         </section>
         <div class="theme-wrap">
           <div class="theme-panel shadow" :class="{'theme-open':showSetting}">
