@@ -97,6 +97,9 @@ const vm = createApp({
     const resetViewHeight = () => {
       const vh = this.getSafeAreaHeight() * 0.01
       document.documentElement.style.setProperty('--vh', `${vh}px`)
+
+      const fullvh = window.innerHeight * 0.01
+      document.documentElement.style.setProperty('--fullvh', `${fullvh}px`)
     }
     resetViewHeight()
 
@@ -120,6 +123,7 @@ const vm = createApp({
       if (div.style.top) {
         document.body.appendChild(div)
         const insetTop = parseInt(getComputedStyle(div).top)
+        document.documentElement.style.setProperty('--insetTop', `${insetTop}px`)
         document.body.removeChild(div)
         vh -= insetTop
       }

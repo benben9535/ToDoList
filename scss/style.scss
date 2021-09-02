@@ -56,6 +56,8 @@ table {
 // 解決手機版本100vh判定異常 - 宣告CSS變數
 :root {
   --vh: 0;
+  --fullvh: 0;
+  --insetTop: 1;
 }
 
 body {
@@ -68,7 +70,7 @@ body {
 #app {
   width: 100%;
   height: 100vh;
-  height: calc(var(--vh, 1vh) * 100);
+  height: calc(var(--fullvh, 1vh) * 100);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -82,7 +84,7 @@ body {
   width: 100%;
   min-width: 320px;
   height: 100vh;
-  height: calc(var(--vh, 1vh) * 100);
+  height: calc(var(--fullvh, 1vh) * 100);
   overflow: hidden;
   background-size: cover;
   background-position: center center;
@@ -99,7 +101,7 @@ body {
 header {
   width: 90%;
   height: 90px;
-  margin: 12px auto;
+  margin: calc(12px + var(--insetTop)) auto 12px auto;
   border-radius: 20px;
   display: flex;
   flex-direction: row;
