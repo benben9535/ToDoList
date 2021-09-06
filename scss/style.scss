@@ -233,7 +233,7 @@ header {
 .list {
   position: relative;
   height: calc(100vh - 290px);
-  height: calc(var(--vh, 1vh) * 100 - 290px);
+  height: calc(var(--fullvh, 1vh) * 100 - 290px);
   margin: 0 auto;
   overflow-y: auto;
   overflow-x: hidden;
